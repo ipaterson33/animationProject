@@ -7,9 +7,9 @@ public class ShapeIcon implements Icon {
     private int height;
     private static final int ICON_WIDTH  = 870;
     private static final int ICON_HEIGHT = 570;
-    private ArrayList<MoveableShape> shapes;
+    private ArrayList<MovableShape> shapes;
 
-    public ShapeIcon(int width, int height)
+    ShapeIcon(int width, int height)
     {
         shapes = new ArrayList<>();
         this.width = width;
@@ -26,19 +26,19 @@ public class ShapeIcon implements Icon {
         return height;
     }
 
-    public void add(MoveableShape shape)
+    void add(MovableShape shape)
     {
         shapes.add(shape);
     }
 
-    public void remove()
+    void remove()
     {
         shapes.remove(shapes.size() - 1);
     }
 
 
-    public void checkShapes() {
-        MoveableShape temp;
+    void checkShapes() {
+        MovableShape temp;
         for (int i = shapes.size() - 1; i >= 0; i--) {
             temp = shapes.get(i);
             if (atEdge(temp.getX(), ICON_WIDTH)) {
@@ -58,9 +58,9 @@ public class ShapeIcon implements Icon {
         }
     }
 
-    public void flipTranslate()
+    void flipTranslate()
     {
-        MoveableShape temp;
+        MovableShape temp;
         for(int i = shapes.size()-1; i >= 0; i--)
         {
             temp = shapes.get(i);

@@ -6,13 +6,13 @@ import java.awt.*;
 
 public class MainWindow extends JFrame {
 
-    AnimationWindow Animation;
-    JPanel FrameButtonPanel;
-    JPanel AnimationButtonPanel;
-    JPanel CheckBoxPanel;
-    JButton[] FrameButtons;
-    JButton[] AnimationButtons;
-    JCheckBox[] CheckBoxes;
+    private AnimationWindow Animation;
+    private JPanel FrameButtonPanel;
+    private JPanel AnimationButtonPanel;
+    private JPanel CheckBoxPanel;
+    private JButton[] FrameButtons;
+    private JButton[] AnimationButtons;
+    private JCheckBox[] CheckBoxes;
     private static final int WINDOW_HEIGHT = 675;
     private static final int WINDOW_WIDTH = 1000;
 
@@ -39,6 +39,7 @@ public class MainWindow extends JFrame {
 
     public void run()
     {
+
 
         Timer t = new Timer(1, event -> {
             Animation.CheckShapes();

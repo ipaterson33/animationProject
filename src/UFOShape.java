@@ -1,10 +1,9 @@
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Line2D;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
+import java.util.Random;
 
-public class UFOShape implements MoveableShape{
+
+public class UFOShape implements MovableShape {
     private int x;
     private int y;
     private int width;
@@ -13,7 +12,7 @@ public class UFOShape implements MoveableShape{
     private static final int ICON_WIDTH  = 870;
     private static final int ICON_HEIGHT = 570;
 
-    public UFOShape()
+    UFOShape()
     {
         this.xDirection = 1;
         this.yDirection = 1;
@@ -64,23 +63,12 @@ public class UFOShape implements MoveableShape{
 
     public void draw(Graphics2D g2)
     {
-        Rectangle2D.Double body = new Rectangle2D.Double(x, y + width / 6, width - 1, width / 6);
-        Ellipse2D.Double frontTire = new Ellipse2D.Double(x + width/6, y + width / 3, width / 6, width / 6);
-        Ellipse2D.Double rearTire = new Ellipse2D.Double(x + width*2/3, y + width / 3, width / 6, width / 6);
-
-        Point2D.Double r1 = new Point2D.Double(x + width / 6, y + width / 6);
-        Point2D.Double r2 = new Point2D.Double(x + width / 3, y);
-        Point2D.Double r3 = new Point2D.Double(x + width * 2/3, y);
-        Point2D.Double r4 = new Point2D.Double(x + width * 5 / 6, y + width / 6);
-        Line2D.Double frontWindshield = new Line2D.Double(r1, r2);
-        Line2D.Double roofTop = new Line2D.Double(r2, r3);
-        Line2D.Double rearWindshield  = new Line2D.Double(r3, r4);
-
-        g2.draw(body);
-        g2.draw(frontTire);
-        g2.draw(rearTire);
-        g2.draw(frontWindshield);
-        g2.draw(roofTop);
-        g2.draw(rearWindshield);
+        g2.setColor(Color.GRAY);
+        g2.fillOval(x + width, y + width, width, width / 4);
+        g2.fillOval(x + width*5/4, y + width * 4/5, width / 2, width / 2);
+        Ellipse2D line = new Ellipse2D.Double(x + width * 5/4, y + width * 12/11, width / 2, width / 6);
+        g2.setColor(Color.BLACK);
+        g2.fillOval(x + width * 11/8, y + width *5/6, width / 5, width / 5);
+        g2.draw(line);
     }
 }

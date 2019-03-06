@@ -8,8 +8,8 @@ public class AnimationWindow extends JPanel {
     private static final int ICON_HEIGHT = 570;
     private static final int PANEL_WIDTH = 915;
     private static final int PANEL_HEIGHT = 600;
-    final JLabel label;
-    ShapeIcon shapes;
+    private final JLabel label;
+    private ShapeIcon shapes;
 
 
 
@@ -25,7 +25,7 @@ public class AnimationWindow extends JPanel {
 
     }
 
-    public void add(MoveableShape shape)
+    public void add(MovableShape shape)
     {
         shapes.add(shape);
     }

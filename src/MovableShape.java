@@ -1,7 +1,7 @@
 import java.awt.*;
 
 
-public interface MoveableShape
+public interface MovableShape
 {
         void draw(Graphics2D g2);
 
