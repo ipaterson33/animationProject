@@ -19,13 +19,18 @@ public class RocketShape implements MovableShape
         this.yDirection = 1;
         this.x = (int) (Math.random() * ((ICON_WIDTH) - 1));
         this.y = (int) (Math.random() * ((ICON_HEIGHT) - 1));
-        this.width = 100;
+        this.width = 200;
     }
 
     public void translate()
     {
         x += xDirection;
         y += yDirection;
+    }
+
+    public int getWidth()
+    {
+        return width;
     }
 
     public int getX()

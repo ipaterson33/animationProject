@@ -4,7 +4,7 @@ import java.awt.*;
 
 
 
-public class MainWindow extends JFrame {
+class MainWindow extends JFrame {
 
     private AnimationWindow Animation;
     private JPanel FrameButtonPanel;
@@ -17,7 +17,7 @@ public class MainWindow extends JFrame {
     private static final int WINDOW_WIDTH = 1000;
 
 
-    public MainWindow()    {
+    MainWindow()    {
         Animation = new AnimationWindow();
         FrameButtonPanel = new JPanel();
         FrameButtons = new JButton[6];
@@ -37,7 +37,7 @@ public class MainWindow extends JFrame {
         setPreferredSize(new Dimension(WINDOW_WIDTH,WINDOW_HEIGHT));
     }
 
-    public void run()
+    void run()
     {
 
 
@@ -94,7 +94,18 @@ public class MainWindow extends JFrame {
         });
         FrameButtons[2].addActionListener(event ->
         {
-            Animation.remove();
+            if(CheckBoxes[0].isSelected())
+            {
+                Animation.remove(150);
+            }
+            if(CheckBoxes[1].isSelected())
+            {
+                Animation.remove(100);
+            }
+            if(CheckBoxes[2].isSelected())
+            {
+                Animation.remove(200);
+            }
             Animation.repaint();
         });
         FrameButtons[3].addActionListener(event ->
@@ -120,7 +131,7 @@ public class MainWindow extends JFrame {
 
     }
 
-    public void initializeFrameButtons()
+    private void initializeFrameButtons()
     {
         FrameButtons[0] = new JButton("Show Window");
         FrameButtons[1] = new JButton("Add");
@@ -131,7 +142,7 @@ public class MainWindow extends JFrame {
 
     }
 
-    public void addFrameButtons()
+    private void addFrameButtons()
     {
         for(int i = 0; i < 6; i ++)
         {
@@ -140,14 +151,14 @@ public class MainWindow extends JFrame {
         add(FrameButtonPanel, BorderLayout.NORTH);
     }
 
-    public void initializePanelButtons()
+    private void initializePanelButtons()
     {
         AnimationButtons[0] = new JButton("Hide");
         AnimationButtons[1] = new JButton("Exit");
 
     }
 
-    public void addPanelButtons()
+    private void addPanelButtons()
     {
         for(int i = 0; i < 2; i ++)
         {
@@ -156,7 +167,7 @@ public class MainWindow extends JFrame {
         Animation.add(AnimationButtonPanel, BorderLayout.SOUTH);
     }
 
-    public void initializeCheckBoxes()
+    private void initializeCheckBoxes()
     {
         CheckBoxes[0] = new JCheckBox("UFO");
         CheckBoxes[1] = new JCheckBox("Bird");
@@ -164,7 +175,7 @@ public class MainWindow extends JFrame {
         CheckBoxes[2] = new JCheckBox("Rocket");
     }
 
-    public void addCheckBoxes()
+    private void addCheckBoxes()
     {
         for(int i = 0; i < 3; i ++)
         {

@@ -2,7 +2,7 @@ import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
 
-public class AnimationWindow extends JPanel {
+class AnimationWindow extends JPanel {
 
     private static final int ICON_WIDTH  = 900;
     private static final int ICON_HEIGHT = 570;
@@ -13,7 +13,7 @@ public class AnimationWindow extends JPanel {
 
 
 
-    public AnimationWindow()
+    AnimationWindow()
     {
         shapes = new ShapeIcon(ICON_WIDTH, ICON_HEIGHT);
         label = new JLabel((shapes));
@@ -25,24 +25,24 @@ public class AnimationWindow extends JPanel {
 
     }
 
-    public void add(MovableShape shape)
+    void add(MovableShape shape)
     {
         shapes.add(shape);
     }
 
-    public void remove()
+    public void remove(int i)
     {
-        shapes.remove();
+        shapes.remove(i);
     }
 
-    public void CheckShapes()
+    void CheckShapes()
     {
         shapes.checkShapes();
         label.repaint();
     }
 
 
-    public void flipTranslate() {
+    void flipTranslate() {
         shapes.flipTranslate();
     }
 }

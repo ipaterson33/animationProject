@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
-import java.util.Random;
 
 
 public class UFOShape implements MovableShape {
@@ -18,7 +17,12 @@ public class UFOShape implements MovableShape {
         this.yDirection = 1;
         this.x = (int) (Math.random() * ((ICON_WIDTH) - 1));
         this.y = (int) (Math.random() * ((ICON_HEIGHT) - 1));
-        this.width = 100;
+        this.width = 150;
+    }
+
+    public int getWidth()
+    {
+        return width;
     }
 
     public void translate()

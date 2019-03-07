@@ -56,6 +56,8 @@ public class BirdShape implements MovableShape {
 
     public void setY(int newY) { y = newY; }
 
+    public int getWidth() { return width;}
+
     public void flipTranslate()
     {
         xDirection = -1 * xDirection;

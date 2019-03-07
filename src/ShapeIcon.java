@@ -31,9 +31,21 @@ public class ShapeIcon implements Icon {
         shapes.add(shape);
     }
 
-    void remove()
+    void remove(int x)
     {
-        shapes.remove(shapes.size() - 1);
+        int i = shapes.size() -1 ;
+        boolean deleted = false;
+        while (!deleted) {
+            if (shapes.get(i).getWidth() == x)
+            {
+                shapes.remove(i);
+                deleted = true;
+            }
+            else
+            {
+                i--;
+            }
+        }
     }
 
 

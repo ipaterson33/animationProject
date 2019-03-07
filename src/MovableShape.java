@@ -15,6 +15,8 @@ public interface MovableShape
 
         int getYDirection();
 
+        int getWidth();
+
         void setX(int newX);
 
         void setY(int newY);
