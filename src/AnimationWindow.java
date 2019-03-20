@@ -13,12 +13,12 @@ class AnimationWindow extends JPanel {
 
 
     /**
-     *
+     * where all animation takes place
      */
     AnimationWindow()
     {
         shapes = new ShapeIcon(ICON_WIDTH, ICON_HEIGHT);
-        label = new JLabel((shapes));
+        label = new JLabel(shapes);
         label.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
         setLayout(new BorderLayout());
         setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));

@@ -10,9 +10,9 @@ public class ShapeIcon implements Icon {
     private ArrayList<MovableShape> shapes;
 
     /**
-     *
-     * @param width
-     * @param height
+     * Icon with arrayList of MoveableShapes to display the animation
+     * @param width : The Width of the JLabel that will be displayed on the AnimationWindow
+     * @param height : The Height of the JLabel that will be displayed on the AnimationWindow
      */
     ShapeIcon(int width, int height)
     {
@@ -22,8 +22,8 @@ public class ShapeIcon implements Icon {
     }
 
     /**
-     *
-     * @return
+     * Function for getting the width of the JLabel
+     * @return Integer of Label Width
      */
     public int getIconWidth()
     {
@@ -31,8 +31,8 @@ public class ShapeIcon implements Icon {
     }
 
     /**
-     *
-     * @return
+     * Function for getting the Height of the JLabel
+     * @return Integer of Label Height
      */
     public int getIconHeight()
     {
@@ -40,8 +40,8 @@ public class ShapeIcon implements Icon {
     }
 
     /**
-     *
-     * @param shape
+     * Adds a MoveableShape interfaced object to the ArrayList of MoveableShapes
+     * @param shape : Is whatever shape that has implemented MoveableShape
      */
     void add(MovableShape shape)
     {
@@ -49,8 +49,8 @@ public class ShapeIcon implements Icon {
     }
 
     /**
-     *
-     * @param x
+     * Removes the most recent instance of a shape from the arrayList
+     * @param x : Integer of the width of the shape specified to be deleted
      */
     void remove(int x)
     {
@@ -117,7 +117,7 @@ public class ShapeIcon implements Icon {
 
 
     /**
-     *
+     * Function for painting shapes to the label
      * @param c
      * @param g
      * @param x

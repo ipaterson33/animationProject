@@ -17,6 +17,9 @@ class MainWindow extends JFrame {
     private static final int WINDOW_WIDTH = 1000;
 
 
+    /**
+     * Main window where most layout and GUI construction takes place
+     */
     MainWindow()    {
         Animation = new AnimationWindow();
         FrameButtonPanel = new JPanel();
@@ -38,7 +41,7 @@ class MainWindow extends JFrame {
     }
 
     /**
-     *
+     * Starts the timer which controls flow of animation and adds actionlisteners and button functionality
      */
     void run()
     {
@@ -134,10 +137,6 @@ class MainWindow extends JFrame {
 
     }
 
-    /**
-     *
-     * @param t
-     */
     private void addAnimation(Timer t) {
         add(Animation, BorderLayout.BEFORE_LINE_BEGINS);
         validate();
