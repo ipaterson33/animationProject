@@ -1,4 +1,4 @@
-public class AnimationTest {
+public class MultiShapeTest {
 
     public static void main(String[] args)
     {

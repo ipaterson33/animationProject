@@ -25,6 +25,11 @@ class AnimationWindow extends JPanel {
 
     }
 
+    void removeAllShapes()
+    {
+        shapes.removeAll();
+    }
+
     void add(MovableShape shape)
     {
         shapes.add(shape);

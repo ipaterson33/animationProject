@@ -48,6 +48,13 @@ public class ShapeIcon implements Icon {
         }
     }
 
+    void removeAll() {
+        for (int i = shapes.size() - 1; i >= 0; i--)
+        {
+            shapes.remove(i);
+        }
+    }
+
 
     void checkShapes() {
         MovableShape temp;

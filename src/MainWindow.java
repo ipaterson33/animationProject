@@ -1,7 +1,7 @@
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
-
+import java.util.Arrays;
 
 
 class MainWindow extends JFrame {
@@ -53,28 +53,24 @@ class MainWindow extends JFrame {
         //Panel Buttons
         AnimationButtons[0].addActionListener(event ->
         {
-            remove(Animation);
-            validate();
-            repaint();
-            pack();
+            Animation.setVisible(false);
             t.stop();
         });
 
         AnimationButtons[1].addActionListener(event ->
         {
-            Animation.setVisible(false);
+            remove(Animation);
+            Animation.removeAllShapes();
+            validate();
+            repaint();
+            pack();
             t.stop();
         });
 
         //Frame Buttons
         FrameButtons[0].addActionListener(event ->
         {
-            add(Animation, BorderLayout.BEFORE_LINE_BEGINS);
-            validate();
-            repaint();
-            pack();
-            Animation.setVisible(true);
-            t.start();
+            addAnimation(t);
         });
         FrameButtons[1].addActionListener(event ->
         {
@@ -89,6 +85,10 @@ class MainWindow extends JFrame {
             if(CheckBoxes[2].isSelected())
             {
                 Animation.add(new RocketShape());
+            }
+            if(!Arrays.asList(getComponents()).contains(Animation))
+            {
+                addAnimation(t);
             }
             Animation.repaint();
         });
@@ -129,6 +129,15 @@ class MainWindow extends JFrame {
         pack();
         setVisible(true);
 
+    }
+
+    private void addAnimation(Timer t) {
+        add(Animation, BorderLayout.BEFORE_LINE_BEGINS);
+        validate();
+        repaint();
+        pack();
+        Animation.setVisible(true);
+        t.start();
     }
 
     private void initializeFrameButtons()
