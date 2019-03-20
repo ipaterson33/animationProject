@@ -37,6 +37,9 @@ class MainWindow extends JFrame {
         setPreferredSize(new Dimension(WINDOW_WIDTH,WINDOW_HEIGHT));
     }
 
+    /**
+     *
+     */
     void run()
     {
 
@@ -131,6 +134,10 @@ class MainWindow extends JFrame {
 
     }
 
+    /**
+     *
+     * @param t
+     */
     private void addAnimation(Timer t) {
         add(Animation, BorderLayout.BEFORE_LINE_BEGINS);
         validate();

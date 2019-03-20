@@ -12,7 +12,9 @@ class AnimationWindow extends JPanel {
     private ShapeIcon shapes;
 
 
-
+    /**
+     *
+     */
     AnimationWindow()
     {
         shapes = new ShapeIcon(ICON_WIDTH, ICON_HEIGHT);
@@ -25,6 +27,9 @@ class AnimationWindow extends JPanel {
 
     }
 
+    /**
+     *
+     */
     void removeAllShapes()
     {
         shapes.removeAll();
@@ -35,18 +40,27 @@ class AnimationWindow extends JPanel {
         shapes.add(shape);
     }
 
+    /**
+     *
+     * @param i
+     */
     public void remove(int i)
     {
         shapes.remove(i);
     }
 
+    /**
+     *
+     */
     void CheckShapes()
     {
         shapes.checkShapes();
         label.repaint();
     }
 
-
+    /**
+     *
+     */
     void flipTranslate() {
         shapes.flipTranslate();
     }

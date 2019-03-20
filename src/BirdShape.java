@@ -98,22 +98,24 @@ public class BirdShape implements MovableShape {
         Line2D.Double tail3 = new Line2D.Double(r14, r12);
 
 
+        g2.setColor(Color.yellow);
         g2.draw(nose1);
         g2.draw(nose2);
         g2.draw(nose3);
+        g2.setColor(Color.BLUE);
         g2.draw(wing1);
         g2.draw(wing2);
         g2.draw(wing3);
         g2.draw(tail1);
         g2.draw(tail2);
         g2.draw(tail3);
-        g2.setColor(Color.BLUE);
-        g2.fillOval(x + width / 4, y + width * 3 / 8, width / 2, width / 4);
-        g2.setColor(Color.BLACK);
-        g2.fillOval(x + width * 9 / 16, y + width * 13 / 32, width / 11, width / 11);
         g2.draw(fwing1);
         g2.draw(fwing2);
         g2.draw(fwing3);
+        g2.fillOval(x + width / 4, y + width * 3 / 8, width / 2, width / 4);
+        g2.setColor(Color.BLACK);
+        g2.fillOval(x + width * 9 / 16, y + width * 13 / 32, width / 11, width / 11);
+
     }
 }
 

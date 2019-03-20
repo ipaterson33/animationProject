@@ -9,6 +9,11 @@ public class ShapeIcon implements Icon {
     private static final int ICON_HEIGHT = 570;
     private ArrayList<MovableShape> shapes;
 
+    /**
+     *
+     * @param width
+     * @param height
+     */
     ShapeIcon(int width, int height)
     {
         shapes = new ArrayList<>();
@@ -16,21 +21,37 @@ public class ShapeIcon implements Icon {
         this.height = height;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getIconWidth()
     {
         return width;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getIconHeight()
     {
         return height;
     }
 
+    /**
+     *
+     * @param shape
+     */
     void add(MovableShape shape)
     {
         shapes.add(shape);
     }
 
+    /**
+     *
+     * @param x
+     */
     void remove(int x)
     {
         int i = shapes.size() -1 ;
@@ -47,6 +68,7 @@ public class ShapeIcon implements Icon {
             }
         }
     }
+
 
     void removeAll() {
         for (int i = shapes.size() - 1; i >= 0; i--)
@@ -94,6 +116,13 @@ public class ShapeIcon implements Icon {
     }
 
 
+    /**
+     *
+     * @param c
+     * @param g
+     * @param x
+     * @param y
+     */
     public void paintIcon(Component c, Graphics g, int x, int y)
     {
         for (int i = shapes.size() - 1; i >= 0; i--) {
